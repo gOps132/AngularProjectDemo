@@ -14,6 +14,7 @@ export class DeleteButtonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("branch changed!!")
   }
 
 }
