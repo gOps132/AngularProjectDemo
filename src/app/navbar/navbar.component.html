@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-container">
+  <button mat-button [matMenuTriggerFor]="menu" id="nav-logo" class="navbar-brand">
+    <h3>Learning Stuff</h3>
+  </button>
+  <mat-menu #menu="matMenu" class="mat-menu">
+    <button mat-menu-item routerLink="/">Home</button>
+    <button mat-menu-item routerLink="/dashboard">User Dashboard</button>
+  </mat-menu>
+  <div class="nav-login-container nav-item">
+    <div *ngIf="auth.user$ | async as user; else login">
+      <button mat-button class="button" (click)="auth.signOut()">
+        Sign Out
+      </button>
+    </div>
+
+    <ng-template #login>
+      <button mat-button class="button" (click)="auth.googleSignin()">
+        Log in with Google
+      </button>
+    </ng-template>
+    <div class="log-button-user-image" *ngIf="auth.user$ | async as user; else anonymous">
+      <img src="{{ user.photoURL }}" alt="{{ user.displayName }}" class="nav-image">
+    </div>
+    <ng-template #anonymous>
+      <img src="https://img.icons8.com/ios/50/000000/anonymous-mask.png" class="nav-image">
+    </ng-template>
+  </div>
+</nav>

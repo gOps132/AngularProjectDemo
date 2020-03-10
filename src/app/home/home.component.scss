@@ -1,0 +1,41 @@
+* {
+  list-style: none;
+}
+
+// .p1-card{
+//     margin: 1.5rem;
+// }
+
+.user-content-scroll-view {
+  overflow: scroll;
+}
+
+.item-panel {
+  margin: 0.5rem;
+}
+
+.add-item-button {
+  background-color: rgb(61, 59, 59);
+}
+
+.add-item-card {
+  margin-top: 1rem;
+}
+
+.detail-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  float: right;
+}
+
+.p1-card{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 5px 20px black !important;
+}
+
+.delete-button{
+  height: 2.5rem;
+  width: 2.5rem;
+}

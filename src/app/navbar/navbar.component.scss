@@ -1,0 +1,28 @@
+.nav-container {
+  background-color: rgb(219, 71, 71);
+  padding: 0.5rem;
+}
+#nav-logo {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+.mat-menu {
+  font-size: large;
+}
+.nav-login-container {
+  display: inline-flex;
+  float: right;
+  padding: 10px;
+}
+.nav-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.button{
+  background-color: rgb(182, 57, 57);
+  padding: 10px;
+  border-radius: 30px;
+  margin-right: 1rem;
+  color: white;
+}

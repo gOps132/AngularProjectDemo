@@ -1,0 +1,137 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- col -->
+    <div class="mat-user-details col-md-4">
+      <div *ngIf="auth.user$ | async as user; else notloggedin">
+        <mat-card>
+          <mat-card-title>
+            <h5>
+              Current UserId : 
+              {{ currentUserId }}
+            </h5>
+          </mat-card-title>
+        </mat-card>
+        <mat-card>
+          <mat-card-title
+            >your details
+            <span>
+              <img
+                src="{{ user.photoURL }}"
+                alt="{{ user.displayName }}"
+                class="detail-image"
+              /> </span
+          ></mat-card-title>
+          <mat-card-content class="user-content-scroll-view">
+            <mat-card-content>
+              Name: {{ user.displayName }} <br />
+              Email: {{ user.email }} <br />
+            </mat-card-content>
+            <pre>
+              {{ user | json }}
+            </pre>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <ng-template #notloggedin>
+        <mat-card>
+          <mat-card-title>must be logged in to view</mat-card-title>
+        </mat-card>
+      </ng-template>
+
+      <!-- add items card -->
+      <mat-card class="add-item-card" *ngIf="auth.user$ | async as user">
+        <mat-card-title>Add Item</mat-card-title>
+        <h4>Title</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Item Title</mat-label>
+          <input matInput #itemTitle />
+        </mat-form-field>
+        <br />
+        <h4>Decscription</h4>
+        <mat-form-field appearance="fill">
+          <mat-label>Item Description</mat-label>
+          <textarea matInput #itemDescription></textarea>
+        </mat-form-field>
+        <br />
+
+        <button
+          mat-button
+          class="add-item-button"
+          (click)="onSubmit(itemTitle.value, itemDescription.value)"
+        >
+          Add Item
+        </button>
+      </mat-card>
+    </div>
+    <!-- col  -->
+
+    <!-- col -->
+
+    <mat-expansion-panel
+      (opened)="firstPanelOpenState = true"
+      (closed)="firstPanelOpenState = false"
+      class="col-md-3 item-panel"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ firstPanelOpenState ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-card-content>  
+          <div *ngFor="let item of igf.items | async">
+            <mat-card class="p1-card">
+              <mat-card-content>
+                {{ item.title }}
+              </mat-card-content>
+              <mat-card-content>
+                {{ item.description }}
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- col -->
+
+    <!-- col -->
+
+    <mat-expansion-panel
+      (opened)="secondPanelOpenState = true"
+      (closed)="secondPanelOpenState = false"
+      class="col-md-4 item-panel"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          firebase json data
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ secondPanelOpenState ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div *ngFor="let item of igf.items | async">
+        <mat-card-content>
+          <ul>
+            <li>
+              <mat-card class="p1-card">
+                <mat-card-content>
+                  <pre>
+                          {{ item | json }}
+                    </pre
+                  >
+                </mat-card-content>
+              </mat-card>
+            </li>
+          </ul>
+        </mat-card-content>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- col  -->
+  </div>
+</div>
