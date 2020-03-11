@@ -8,7 +8,12 @@
 /bazel-out
 
 #environment
+<<<<<<< HEAD
 /src/app/environments
+=======
+/src/app/environments/environment.prod.ts
+/src/app/environments/environment.ts
+>>>>>>> alternate-universe
 
 # dependencies
 /node_modules
