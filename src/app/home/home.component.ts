@@ -31,7 +31,5 @@ export class HomeComponent {
   onSubmit(itemTitle: string, itemDescription: string, ) {
     this.igf.onSubmit(itemTitle, itemDescription);
   }
-
-  //delete button handler
 }
 
