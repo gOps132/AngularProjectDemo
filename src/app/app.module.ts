@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 
 //Components
@@ -30,6 +31,7 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { DeleteButtonComponent } from './share/delete-button/delete-button.component';
 import { ListcompComponent } from './home/listcomp/listcomp.component';
+
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, UserDashboardComponent, DeleteButtonComponent, ListcompComponent],
@@ -49,6 +51,7 @@ import { ListcompComponent } from './home/listcomp/listcomp.component';
     MatInputModule,
     MatRadioModule,
     MatDialogModule,
+    MatIconModule,
 
     //Angular Fire
     AngularFireModule.initializeApp(environment.firebaseConfig),

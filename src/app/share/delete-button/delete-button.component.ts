@@ -1,4 +1,10 @@
-import { Component, OnInit, Directive } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Directive, 
+  Output, 
+  EventEmitter 
+} from '@angular/core';
 
 @Component({
   selector: 'app-delete-button',
