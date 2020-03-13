@@ -3,25 +3,27 @@ import { ItemServiceService } from './../../service/item-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-listcomp',
-  templateUrl: './listcomp.component.html',
-  styleUrls: ['./listcomp.component.scss']
+  selector: 'app-add-item',
+  templateUrl: './add-item.component.html',
+  styleUrls: ['./add-item.component.scss']
 })
-export class ListcompComponent implements OnInit {
-  firstPanelOpenState: Boolean = false;
-  secondPanelOpenState: Boolean = false;
-
+export class AddItemComponent implements OnInit {
   currentUserId: String;
 
   constructor(
     public igf: ItemServiceService,
     private auth: AuthService
-  ) { }
-
-  ngOnInit() {
+  ) {
     this.auth.currentUser$.subscribe(user => {
       this.currentUserId =  user.uid;
     })
+   }
+
+  ngOnInit() {
+  }
+
+  onSubmit(itemTitle: string, itemDescription: string, ) {
+    this.igf.onSubmit(itemTitle, itemDescription);
   }
 
 }

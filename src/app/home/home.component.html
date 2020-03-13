@@ -40,29 +40,8 @@
       </ng-template>
 
       <!-- add items card -->
-      <mat-card class="add-item-card" *ngIf="auth.user$ | async as user">
-        <mat-card-title>Add Item</mat-card-title>
-        <h4>Title</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Item Title</mat-label>
-          <input matInput #itemTitle />
-        </mat-form-field>
-        <br />
-        <h4>Decscription</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Item Description</mat-label>
-          <textarea matInput #itemDescription></textarea>
-        </mat-form-field>
-        <br />
-
-        <button
-          mat-button
-          class="add-item-button"
-          (click)="onSubmit(itemTitle.value, itemDescription.value)"
-        >
-          Add Item
-        </button>
-      </mat-card>
+      <app-add-item></app-add-item>
+      
     </div>
     <!-- col  -->
 

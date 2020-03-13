@@ -23,9 +23,5 @@ export class HomeComponent {
         this.currentUserId =  user.uid;
       })
     }
-
-  onSubmit(itemTitle: string, itemDescription: string, ) {
-    this.igf.onSubmit(itemTitle, itemDescription);
-  }
 }
 
