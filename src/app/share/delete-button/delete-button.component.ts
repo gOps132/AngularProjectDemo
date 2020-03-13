@@ -23,4 +23,23 @@ export class DeleteButtonComponent implements OnInit {
     
   }
 
+  preventSingleClick = false;
+  timer: any;
+  delay: Number;
+
+  singleClick(event) {
+    this.preventSingleClick = false;
+     const delay = 200;
+      this.timer = setTimeout(() => {
+        if (!this.preventSingleClick) {
+          console.log("single click")
+        }
+      }, delay);
+  }
+
+    doubleClick (event) {
+      this.preventSingleClick = true;
+      clearTimeout(this.timer);
+      console.log("doubleclick")
+    }
 }
