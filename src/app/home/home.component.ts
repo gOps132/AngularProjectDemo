@@ -1,11 +1,9 @@
 import { ItemServiceService } from './../service/item-service.service';
-import { Item } from './../service/item-model';
 import {
   AngularFirestore,
 } from "@angular/fire/firestore";
 import { Component } from "@angular/core";
 import { AuthService } from "../service/auth.service";
-import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-home",
@@ -14,8 +12,6 @@ import { Observable } from 'rxjs';
 })
 
 export class HomeComponent {
-  firstPanelOpenState: Boolean = false;
-  secondPanelOpenState: Boolean = false;
   currentUserId: String;
   
   constructor(
