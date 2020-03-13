@@ -23,5 +23,7 @@ export class ListcompComponent implements OnInit {
       this.currentUserId =  user.uid;
     })
   }
-
+  onDelete(itemId: string){
+    this.igf.onDelete(itemId);
+  }
 }

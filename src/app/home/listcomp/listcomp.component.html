@@ -21,7 +21,9 @@
               <mat-card-content>
                 {{ item.description }}
               </mat-card-content>
-              <app-delete-button></app-delete-button>
+              <app-delete-button 
+                (click)="onDelete(item.id)"
+              ></app-delete-button>
             </mat-card>
           </div>
         </mat-card-content>

@@ -1,3 +1,4 @@
+import { ItemServiceService } from './../../service/item-service.service';
 import { 
   Component, 
   OnInit, 
@@ -17,31 +18,35 @@ import {
 })
 export class DeleteButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private igf: ItemServiceService
+  ) { }
 
   ngOnInit() {
     
   }
 
-  preventSingleClick = false;
-  timer: any;
-  delay: Number;
+  // double click experiment
+  // preventSingleClick = false;
+  // timer: any;
+  // delay: Number;
 
-  singleClick(event) {
-    this.preventSingleClick = false;
-     const delay = 200;
-      this.timer = setTimeout(() => {
-        if (!this.preventSingleClick) {
-          //function on single click
-          console.log("single click")
-        }
-      }, delay);
-  }
+  // singleClick(event) {
+  //   this.preventSingleClick = false;
+  //    const delay = 200;
+  //     this.timer = setTimeout(() => {
+  //       if (!this.preventSingleClick) {
+  //         //function on single click
+  //         console.log("single click")
+  //       }
+  //     }, delay);
+  // }
 
-    doubleClick (event) {
-      this.preventSingleClick = true;
-      clearTimeout(this.timer);
-      //functon for double click
-      console.log("doubleclick")
-    }
+  // doubleClick (event) {
+  //   this.preventSingleClick = true;
+  //   clearTimeout(this.timer);
+  //   //functon for double click
+  //   console.log("doubleclick")
+  // }
+
 }
