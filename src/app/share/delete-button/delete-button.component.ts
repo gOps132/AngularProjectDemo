@@ -32,6 +32,7 @@ export class DeleteButtonComponent implements OnInit {
      const delay = 200;
       this.timer = setTimeout(() => {
         if (!this.preventSingleClick) {
+          //function on single click
           console.log("single click")
         }
       }, delay);
@@ -40,6 +41,7 @@ export class DeleteButtonComponent implements OnInit {
     doubleClick (event) {
       this.preventSingleClick = true;
       clearTimeout(this.timer);
+      //functon for double click
       console.log("doubleclick")
     }
 }
