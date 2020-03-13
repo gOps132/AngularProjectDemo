@@ -31,5 +31,9 @@ export class ItemServiceService {
     this.itemsCollection.doc(id).set({ title: itemTitle, description: itemDescription });
     // this.itemsCollection.add({ title: itemTitle, description: itemDescription});
   }
+
+  onDelete(itemId: string) {
+    this.itemsCollection.doc(itemId).delete();
+  }
 }
 

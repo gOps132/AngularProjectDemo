@@ -1,2 +1,8 @@
-<!-- delete button with the Angular material template here -->
-
+<button 
+    mat-button 
+    color="warn" 
+    (click)="onDelete(item.id)"
+    (dblclick)="doubleClick($event)" 
+    >
+    <mat-icon>delete</mat-icon>
+</button>

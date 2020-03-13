@@ -1,0 +1,31 @@
+<mat-expansion-panel
+      (opened)="firstPanelOpenState = true"
+      (closed)="firstPanelOpenState = false"
+      class="col-md-3 item-panel"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          Currently I am {{ firstPanelOpenState ? "open" : "closed" }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <mat-card-content>  
+          <div *ngFor="let item of igf.items | async">
+            <mat-card class="p1-card">
+              <mat-card-content>
+                {{ item.title }}
+              </mat-card-content>
+              <mat-card-content>
+                {{ item.description }}
+              </mat-card-content>
+              <app-delete-button 
+                (click)="onDelete(item.id)"
+              ></app-delete-button>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      </div>
+    </mat-expansion-panel>

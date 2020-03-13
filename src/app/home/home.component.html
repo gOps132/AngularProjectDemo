@@ -40,98 +40,13 @@
       </ng-template>
 
       <!-- add items card -->
-      <mat-card class="add-item-card" *ngIf="auth.user$ | async as user">
-        <mat-card-title>Add Item</mat-card-title>
-        <h4>Title</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Item Title</mat-label>
-          <input matInput #itemTitle />
-        </mat-form-field>
-        <br />
-        <h4>Decscription</h4>
-        <mat-form-field appearance="fill">
-          <mat-label>Item Description</mat-label>
-          <textarea matInput #itemDescription></textarea>
-        </mat-form-field>
-        <br />
-
-        <button
-          mat-button
-          class="add-item-button"
-          (click)="onSubmit(itemTitle.value, itemDescription.value)"
-        >
-          Add Item
-        </button>
-      </mat-card>
+      <app-add-item></app-add-item>
+      
     </div>
     <!-- col  -->
 
-    <!-- col -->
-
-    <mat-expansion-panel
-      (opened)="firstPanelOpenState = true"
-      (closed)="firstPanelOpenState = false"
-      class="col-md-3 item-panel"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{ firstPanelOpenState ? "open" : "closed" }}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div>
-        <mat-card-content>  
-          <div *ngFor="let item of igf.items | async">
-            <mat-card class="p1-card">
-              <mat-card-content>
-                {{ item.title }}
-              </mat-card-content>
-              <mat-card-content>
-                {{ item.description }}
-              </mat-card-content>
-            </mat-card>
-          </div>
-        </mat-card-content>
-      </div>
-    </mat-expansion-panel>
+    <app-listcomp></app-listcomp>
 
     <!-- col -->
-
-    <!-- col -->
-
-    <mat-expansion-panel
-      (opened)="secondPanelOpenState = true"
-      (closed)="secondPanelOpenState = false"
-      class="col-md-4 item-panel"
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          firebase json data
-        </mat-panel-title>
-        <mat-panel-description>
-          Currently I am {{ secondPanelOpenState ? "open" : "closed" }}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div *ngFor="let item of igf.items | async">
-        <mat-card-content>
-          <ul>
-            <li>
-              <mat-card class="p1-card">
-                <mat-card-content>
-                  <pre>
-                          {{ item | json }}
-                    </pre
-                  >
-                </mat-card-content>
-              </mat-card>
-            </li>
-          </ul>
-        </mat-card-content>
-      </div>
-    </mat-expansion-panel>
-
-    <!-- col  -->
   </div>
 </div>

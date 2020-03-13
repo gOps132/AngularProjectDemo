@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 
 //Components
@@ -29,9 +30,12 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { DeleteButtonComponent } from './share/delete-button/delete-button.component';
+import { ListcompComponent } from './home/listcomp/listcomp.component';
+import { AddItemComponent } from './home/add-item/add-item.component';
+
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, UserDashboardComponent, DeleteButtonComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, UserDashboardComponent, DeleteButtonComponent, ListcompComponent, AddItemComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,6 +52,7 @@ import { DeleteButtonComponent } from './share/delete-button/delete-button.compo
     MatInputModule,
     MatRadioModule,
     MatDialogModule,
+    MatIconModule,
 
     //Angular Fire
     AngularFireModule.initializeApp(environment.firebaseConfig),
